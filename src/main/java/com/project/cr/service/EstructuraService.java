@@ -1,5 +1,6 @@
 package com.project.cr.service;
 
+import com.project.cr.dto.CEstructuraDTO;
 import com.project.cr.interfaces.IEstructura;
 import com.project.cr.model.CEstructura;
 import com.project.cr.repository.EstructuraRepo;
@@ -15,10 +16,21 @@ public class EstructuraService implements IEstructura {
     }
 
     @Override
-    public CEstructura create(CEstructura cEstructura) {
-        return cEstructuraRepo.save(cEstructura);
+    public CEstructura create(CEstructuraDTO cEstructuraDTO) {
 
+        CEstructura estructura = new CEstructura();
+
+        estructura.setNombre(cEstructuraDTO.getNombre());
+        estructura.setDescripcion(cEstructuraDTO.getDescripcion());
+        estructura.setTipo(cEstructuraDTO.getTipo());
+        estructura.setCalidad(cEstructuraDTO.getCalidad());
+        estructura.setObjetivo(cEstructuraDTO.getObjetivo());
+        estructura.setCosteElixir(cEstructuraDTO.getCosteElixir());
+        estructura.setVelocidadAtaque(cEstructuraDTO.getVelocidadAtaque());
+        estructura.setTiempoDespliegue(cEstructuraDTO.getTiempoDespliegue());
+        estructura.setTiempoVida(cEstructuraDTO.getTiempoVida());
+
+        return this.cEstructuraRepo.save(estructura);
     }
-
 
 }

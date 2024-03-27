@@ -1,5 +1,6 @@
 package com.project.cr.controller;
 
+import com.project.cr.dto.CEstructuraDTO;
 import com.project.cr.model.CEstructura;
 import com.project.cr.repository.EstructuraRepo;
 import com.project.cr.service.EstructuraService;
@@ -26,14 +27,14 @@ public class EstructuraController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<?> create(@RequestBody @Valid CEstructura estructura) {
+    public ResponseEntity<?> create(@RequestBody @Valid CEstructuraDTO estructura) {
         this.cEstructuraService.create(estructura);
         log.info("Registrando carta estructura");
         return new ResponseEntity<>("Registrado correctamente", HttpStatus.CREATED);
     }
 
     @PatchMapping("/update/{id}")
-    public ResponseEntity<?> update(@PathVariable Long id, @RequestBody CEstructura estructura){
+    public ResponseEntity<?> update(@PathVariable Long id, @RequestBody CEstructuraDTO estructura){
         Optional<CEstructura>estructuraCard = estructuraRepo.findById(id);
         return estructuraCard.isPresent() ?
                 new ResponseEntity<>(this.cEstructuraService.create(estructura), HttpStatus.CREATED) :
