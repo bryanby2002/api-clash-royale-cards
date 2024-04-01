@@ -1,6 +1,6 @@
 package com.project.cr.controller;
 
-import com.project.cr.model.CHechizo;
+import com.project.cr.model.Hechizo;
 import com.project.cr.repository.HechizoRepo;
 import com.project.cr.service.HechizoService;
 import lombok.extern.slf4j.Slf4j;
@@ -25,15 +25,15 @@ public class HechizoController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<?> create(@RequestBody CHechizo hechizo) {
+    public ResponseEntity<?> create(@RequestBody Hechizo hechizo) {
         hechizoService.create(hechizo);
         log.info("Registrando carta hechizo");
         return new ResponseEntity<>("Registrado correctamente", HttpStatus.CREATED);
     }
 
     @PatchMapping("/update/{id}")
-    public ResponseEntity<?> update(@PathVariable Long id, @RequestBody CHechizo hechizo) {
-        Optional<CHechizo> hechizoOptional = hechizoRepo.findById(id);
+    public ResponseEntity<?> update(@PathVariable Long id, @RequestBody Hechizo hechizo) {
+        Optional<Hechizo> hechizoOptional = hechizoRepo.findById(id);
         return hechizoOptional.isPresent() ?
                 new ResponseEntity<>(this.hechizoService.create(hechizo), HttpStatus.CREATED) :
                 new ResponseEntity<>("Not found ID", HttpStatus.NOT_FOUND);

@@ -3,15 +3,13 @@ package com.project.cr.model;
 import jakarta.persistence.Entity;
 import lombok.*;
 
-import java.time.LocalTime;
-
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @ToString
-public class CTropa extends Carta {
+public class Tropa extends Carta {
 
     private String velocidad;
     private String velocidadAtaque;

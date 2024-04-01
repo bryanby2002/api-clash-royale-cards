@@ -1,7 +1,7 @@
 package com.project.cr.service;
 
 import com.project.cr.interfaces.IHechizo;
-import com.project.cr.model.CHechizo;
+import com.project.cr.model.Hechizo;
 import com.project.cr.repository.HechizoRepo;
 import org.springframework.stereotype.Service;
 
@@ -15,8 +15,8 @@ public class HechizoService implements IHechizo {
     }
 
     @Override
-    public CHechizo create(CHechizo cHechizo) {
-        return cHechizoRepo.save(cHechizo);
+    public Hechizo create(Hechizo hechizo) {
+        return cHechizoRepo.save(hechizo);
     }
 
 

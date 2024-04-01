@@ -1,8 +1,8 @@
 package com.project.cr.service;
 
-import com.project.cr.dto.CEstructuraDTO;
+import com.project.cr.dto.EstructuraRequest;
 import com.project.cr.interfaces.IEstructura;
-import com.project.cr.model.CEstructura;
+import com.project.cr.model.Estructura;
 import com.project.cr.repository.EstructuraRepo;
 import org.springframework.stereotype.Service;
 
@@ -16,19 +16,19 @@ public class EstructuraService implements IEstructura {
     }
 
     @Override
-    public CEstructura create(CEstructuraDTO cEstructuraDTO) {
+    public Estructura create(EstructuraRequest estructuraRequest) {
 
-        CEstructura estructura = new CEstructura();
+        Estructura estructura = new Estructura();
 
-        estructura.setNombre(cEstructuraDTO.getNombre());
-        estructura.setDescripcion(cEstructuraDTO.getDescripcion());
-        estructura.setTipo(cEstructuraDTO.getTipo());
-        estructura.setCalidad(cEstructuraDTO.getCalidad());
-        estructura.setObjetivo(cEstructuraDTO.getObjetivo());
-        estructura.setCosteElixir(cEstructuraDTO.getCosteElixir());
-        estructura.setVelocidadAtaque(cEstructuraDTO.getVelocidadAtaque());
-        estructura.setTiempoDespliegue(cEstructuraDTO.getTiempoDespliegue());
-        estructura.setTiempoVida(cEstructuraDTO.getTiempoVida());
+        estructura.setNombre(estructuraRequest.getNombre());
+        estructura.setDescripcion(estructuraRequest.getDescripcion());
+        estructura.setTipo(estructuraRequest.getTipo());
+        estructura.setCalidad(estructuraRequest.getCalidad());
+        estructura.setObjetivo(estructuraRequest.getObjetivo());
+        estructura.setCosteElixir(estructuraRequest.getCosteElixir());
+        estructura.setVelocidadAtaque(estructuraRequest.getVelocidadAtaque());
+        estructura.setTiempoDespliegue(estructuraRequest.getTiempoDespliegue());
+        estructura.setTiempoVida(estructuraRequest.getTiempoVida());
 
         return this.cEstructuraRepo.save(estructura);
     }

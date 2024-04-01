@@ -1,10 +1,10 @@
 package com.project.cr.interfaces;
 
-import com.project.cr.dto.CEstructuraDTO;
-import com.project.cr.model.CEstructura;
+import com.project.cr.dto.EstructuraRequest;
+import com.project.cr.model.Estructura;
 
 public interface IEstructura {
 
-    CEstructura create(CEstructuraDTO cEstructuraDTO) ;
+    Estructura create(EstructuraRequest estructuraRequest) ;
 
 }

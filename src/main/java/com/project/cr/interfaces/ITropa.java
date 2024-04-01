@@ -1,8 +1,8 @@
 package com.project.cr.interfaces;
 
-import com.project.cr.model.CTropa;
+import com.project.cr.model.Tropa;
 
 public interface ITropa {
-    CTropa create(CTropa cTropa);
+    Tropa create(Tropa tropa);
 
 }

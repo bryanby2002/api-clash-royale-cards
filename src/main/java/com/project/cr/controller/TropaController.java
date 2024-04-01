@@ -1,6 +1,6 @@
 package com.project.cr.controller;
 
-import com.project.cr.model.CTropa;
+import com.project.cr.model.Tropa;
 import com.project.cr.repository.TropaRepo;
 import com.project.cr.service.TropaService;
 import jakarta.validation.Valid;
@@ -26,15 +26,15 @@ public class TropaController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<?> create(@RequestBody @Valid CTropa tropa) {
+    public ResponseEntity<?> create(@RequestBody @Valid Tropa tropa) {
         tropaService.create(tropa);
         log.info("Registrando carta tipo tropa");
         return  new ResponseEntity<>("Registrado correctamente", HttpStatus.CREATED);
     }
 
     @PutMapping("/update/{id}")
-    public ResponseEntity<?> update(@PathVariable Long id, @RequestBody CTropa tropa){
-        Optional<CTropa> tropaOptional = tropaRepo.findById(id);
+    public ResponseEntity<?> update(@PathVariable Long id, @RequestBody Tropa tropa){
+        Optional<Tropa> tropaOptional = tropaRepo.findById(id);
         return tropaOptional.isPresent() ?
                 new ResponseEntity<>(this.tropaService.create(tropa), HttpStatus.CREATED) :
                 new ResponseEntity<>("Not found ID ", HttpStatus.NOT_FOUND);

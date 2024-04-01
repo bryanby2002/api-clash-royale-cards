@@ -1,8 +1,8 @@
 package com.project.cr.interfaces;
 
-import com.project.cr.model.CHechizo;
+import com.project.cr.model.Hechizo;
 
 public interface IHechizo {
-    CHechizo create(CHechizo cHechizo);
+    Hechizo create(Hechizo hechizo);
 
 }

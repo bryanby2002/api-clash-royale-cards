@@ -13,7 +13,7 @@ import java.time.LocalTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class CHechizo extends Carta {
+public class Hechizo extends Carta {
 
     private Double radio;
     private LocalTime duracion;
