@@ -13,6 +13,6 @@ logré desarrollarlo.
 #### Como resultado
 - Api Rest como servicio web
 ## Recursos
-- /todo
-- /{tipo-carta}
-- /search/{palabra}
+- GET /all
+- GET /{tipo-carta}
+- GET /search/{palabra}
