@@ -2,10 +2,11 @@ package com.project.cr.dto;
 
 import com.project.cr.model.Carta;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalTime;
 
-@Getter
+@Getter @Setter
 public class EstructuraRequest extends Carta {
 
     private String velocidadAtaque;
