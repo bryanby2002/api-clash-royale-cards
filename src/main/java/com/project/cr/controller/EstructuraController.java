@@ -1,7 +1,6 @@
 package com.project.cr.controller;
 
 import com.project.cr.dto.EstructuraRequest;
-import com.project.cr.model.Estructura;
 import com.project.cr.repository.EstructuraRepo;
 import com.project.cr.service.EstructuraService;
 import jakarta.validation.Valid;
@@ -9,8 +8,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/estructura")
@@ -28,19 +25,18 @@ public class EstructuraController {
 
     @PostMapping("/create")
     public ResponseEntity<?> create(@RequestBody @Valid EstructuraRequest estructura) {
-        this.cEstructuraService.create(estructura);
+        this.cEstructuraService.save(estructura);
         log.info("Registrando carta estructura");
         return new ResponseEntity<>("Registrado correctamente", HttpStatus.CREATED);
     }
 
     @PatchMapping("/update/{id}")
     public ResponseEntity<?> update(@PathVariable Long id, @RequestBody EstructuraRequest estructura){
-        Optional<Estructura>estructuraCard = estructuraRepo.findById(id);
-        return estructuraCard.isPresent() ?
-                new ResponseEntity<>(this.cEstructuraService.create(estructura), HttpStatus.CREATED) :
-                new ResponseEntity<>("Not found ID", HttpStatus.NOT_FOUND);
-
+        if(estructuraRepo.existsById(id)){
+            estructura.setId(id);
+            cEstructuraService.save(estructura);
+            return new ResponseEntity<>("Actualizado correctamente", HttpStatus.CREATED);
+        }
+        return new ResponseEntity<>("Not found Id", HttpStatus.NOT_FOUND);
     }
-
-
 }

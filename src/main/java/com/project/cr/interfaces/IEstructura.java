@@ -5,6 +5,6 @@ import com.project.cr.model.Estructura;
 
 public interface IEstructura {
 
-    Estructura create(EstructuraRequest estructuraRequest) ;
+    Estructura save(EstructuraRequest estructuraRequest) ;
 
 }

@@ -16,7 +16,7 @@ public class EstructuraService implements IEstructura {
     }
 
     @Override
-    public Estructura create(EstructuraRequest estructuraRequest) {
+    public Estructura save(EstructuraRequest estructuraRequest) {
 
         Estructura estructura = new Estructura();
 
