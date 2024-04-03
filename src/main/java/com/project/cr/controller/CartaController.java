@@ -34,13 +34,7 @@ public class CartaController {
 
     @GetMapping("/search/{palabra}")
     public ResponseEntity<?>search(@PathVariable String palabra){
-        //recurso cards
-        List<Carta> cardList = cartaService.findAll();
-        // Search cards
-        List<Carta> cardsSearch = cardList.stream()
-                .filter(carta -> carta.getNombre().equals(palabra) ||
-                        carta.getTipo().equals(palabra) ||
-                        carta.getCalidad().equals(palabra)).toList();
-        return new ResponseEntity<>(cardsSearch, HttpStatus.OK);
+       List<Carta> searchCards = cartaService.search(palabra);
+       return new ResponseEntity<>(searchCards, HttpStatus.OK);
     }
 }

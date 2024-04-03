@@ -16,7 +16,7 @@ public class EstructuraService implements IEstructura {
     }
 
     @Override
-    public Estructura save(EstructuraRequest estructuraRequest) {
+    public void save(EstructuraRequest estructuraRequest) {
 
         Estructura estructura = new Estructura();
 
@@ -30,7 +30,8 @@ public class EstructuraService implements IEstructura {
         estructura.setTiempoDespliegue(estructuraRequest.getTiempoDespliegue());
         estructura.setTiempoVida(estructuraRequest.getTiempoVida());
 
-        return this.cEstructuraRepo.save(estructura);
+        cEstructuraRepo.save(estructura);
+
     }
 
 }

@@ -16,7 +16,7 @@ public class HechizoService implements IHechizo {
     }
 
     @Override
-    public Hechizo save(HechizoRequest hechizoRequest) {
+    public void save(HechizoRequest hechizoRequest) {
 
         Hechizo hechizo = new Hechizo();
 
@@ -30,8 +30,6 @@ public class HechizoService implements IHechizo {
         hechizo.setDuracion(hechizoRequest.getDuracion());
 
         hechizoRepo.save(hechizo);
-
-        return hechizo;
 
     }
 

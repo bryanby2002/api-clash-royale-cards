@@ -20,4 +20,9 @@ public class CartaService implements ICarta {
     public List<Carta> findAll() {
         return cartaRepo.findAll();
     }
+
+    @Override
+    public List<Carta> search(String palabra) {
+        return cartaRepo.search(palabra);
+    }
 }

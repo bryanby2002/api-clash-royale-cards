@@ -16,7 +16,7 @@ public class TropaService implements ITropa {
     }
 
     @Override
-    public Tropa save(TropaRequest tropaRequest) {
+    public void save(TropaRequest tropaRequest) {
 
         Tropa tropa = new Tropa();
 
@@ -33,7 +33,6 @@ public class TropaService implements ITropa {
 
         cTropaRepo.save(tropa);
 
-        return tropa;
     }
 
 
