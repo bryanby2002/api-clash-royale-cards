@@ -10,6 +10,7 @@ logré desarrollarlo.
 - Java Spring Boot 
 - MySQL como Base de datos 
 - Intellij IDEA como entorno de desarrollo
+- Spring security 
 #### Como resultado
 - Api Rest como servicio web
 ## Recursos
