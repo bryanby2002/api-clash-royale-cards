@@ -1,6 +1,7 @@
 package com.project.cr.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,6 +14,7 @@ import java.time.LocalTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Table(name = "hehizos")
 public class Hechizo extends Carta {
 
     private Double radio;

@@ -13,6 +13,7 @@ import lombok.*;
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @Valid
+@Table(name = "cartas")
 public class Carta {
 
     @Id
