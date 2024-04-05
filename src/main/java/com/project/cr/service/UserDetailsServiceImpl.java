@@ -42,4 +42,5 @@ public class UserDetailsServiceImpl implements UserDetailsService {
                 userModel.isAccountNoLocked(),
                 authorityList);
     }
+
 }
