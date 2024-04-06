@@ -31,22 +31,22 @@ public class SecurityConfig {
                .authorizeHttpRequests(http -> {
 
                    // endpoinds publicos
-                   http.requestMatchers(HttpMethod.GET, "/api/v2/card/all").permitAll();
-                   http.requestMatchers(HttpMethod.GET, "/api/v2/card/search/{palabra}").permitAll();
-                   http.requestMatchers(HttpMethod.GET, "/api/v2/card/{tipo}").permitAll();
+                   http.requestMatchers(HttpMethod.GET, "/card/all").permitAll();
+                   http.requestMatchers(HttpMethod.GET, "/card/search/{palabra}").permitAll();
+                   http.requestMatchers(HttpMethod.GET, "/card/{tipo}").permitAll();
 
                    //endpoinst privadas
-                   http.requestMatchers(HttpMethod.POST, "api/v2/estructura/create")
+                   http.requestMatchers(HttpMethod.POST, "/estructura/create")
                            .hasAuthority("CREATE");
-                   http.requestMatchers(HttpMethod.PATCH, "api/v2/estructura/update/{id}")
+                   http.requestMatchers(HttpMethod.PATCH, "/estructura/update/{id}")
                            .hasRole("DEVELOPER");
-                   http.requestMatchers(HttpMethod.POST, "api/v2/tropa/create")
+                   http.requestMatchers(HttpMethod.POST, "/tropa/create")
                            .hasAuthority("CREATE");
-                   http.requestMatchers(HttpMethod.PATCH, "api/v2/tropa/update/{id}")
+                   http.requestMatchers(HttpMethod.PATCH, "/tropa/update/{id}")
                            .hasRole("DEVELOPER");
-                   http.requestMatchers(HttpMethod.POST, "api/v2/hechizo/create")
+                   http.requestMatchers(HttpMethod.POST, "/hechizo/create")
                            .hasAuthority("CREATE");
-                   http.requestMatchers(HttpMethod.PATCH, "api/v2/hechizo/update/{id}")
+                   http.requestMatchers(HttpMethod.PATCH, "/hechizo/update/{id}")
                            .hasRole("DEVELOPER");
 
                    // endpoint no configuradas
